@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://WS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WS/">
+
+<xs:element name="AlterarConta" type="tns:AlterarConta"/>
+
+<xs:element name="AlterarContaResponse" type="tns:AlterarContaResponse"/>
+
+<xs:element name="ConsultarConta" type="tns:ConsultarConta"/>
+
+<xs:element name="ConsultarContaResponse" type="tns:ConsultarContaResponse"/>
+
+<xs:element name="ContaExistente" type="tns:ContaExistente"/>
+
+<xs:element name="ContaExistenteResponse" type="tns:ContaExistenteResponse"/>
+
+<xs:element name="RealizarDeposito" type="tns:RealizarDeposito"/>
+
+<xs:element name="RealizarDepositoResponse" type="tns:RealizarDepositoResponse"/>
+
+<xs:element name="RealizarSaque" type="tns:RealizarSaque"/>
+
+<xs:element name="RealizarSaqueResponse" type="tns:RealizarSaqueResponse"/>
+
+<xs:element name="cadastrarConta" type="tns:cadastrarConta"/>
+
+<xs:element name="cadastrarContaResponse" type="tns:cadastrarContaResponse"/>
+
+<xs:complexType name="ContaExistente">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ContaExistenteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarConta">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConsultarContaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:conta" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="conta">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="num_ag" type="xs:int"/>
+<xs:element name="num_conta" type="xs:int"/>
+<xs:element name="saldo" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cadastrarConta">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="ag" type="xs:int"/>
+<xs:element name="conta" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cadastrarContaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AlterarConta">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AlterarContaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RealizarSaque">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RealizarSaqueResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RealizarDeposito">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+<xs:element name="arg2" type="xs:float"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="RealizarDepositoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
